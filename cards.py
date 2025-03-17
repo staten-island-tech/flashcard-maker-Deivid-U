@@ -18,13 +18,13 @@ class Student:
         streak = 0
         points = 0
         with open("FlashCards.json", "r") as file:
-            studentcards = dict(json.load(file))
+            studentcards = json.load(file)
             for card in studentcards:
                 print(f'{card}')
                 answer = input('What is the answer? ')
                 if answer == studentcards[card]:
-                    streak += 1
                     points += (10 + streak)
+                    streak += 1
                     print(f'CORRECT! You now have {points} points and a streak of {streak}!')
                 else:
                     streak = 0

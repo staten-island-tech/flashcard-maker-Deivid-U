@@ -4,8 +4,8 @@ def next_distinct_year(Y):
     checking = True
     while checking == True: 
         Y += 1
-        print(Y)
-        digit_unique = False
+        strY = str(Y)
+        digit_unique = True
         zero = False
         one = False
         two = False
@@ -16,7 +16,7 @@ def next_distinct_year(Y):
         seven = False
         eight = False
         nine = False
-        for digit in str(Y).split():
+        for digit in strY:
             if digit == "0":
                 if zero == True:
                     digit_unique = False
@@ -77,7 +77,7 @@ def next_distinct_year(Y):
                     break
                 else:
                     nine = True
-        if digit_unique != False:
+        if digit_unique == True:
             checking = False
     print(Y)
 
